@@ -63,7 +63,8 @@ fun Greeting(modifier: Modifier = Modifier) {
         .fillMaxSize()
         .statusBarsPadding()){
         val(clickCount, setClickCount) = remember { mutableIntStateOf(0) }
-        if(clickCount > 100) {
+
+        if(clickCount >= 100) {
             Box(contentAlignment = Alignment.TopCenter,
                 modifier = Modifier.fillMaxWidth()) {
                 Text(
@@ -92,7 +93,6 @@ fun Greeting(modifier: Modifier = Modifier) {
                     Text(text = "RESTART")
                 }
             }
-
         }else{
         Box(contentAlignment = Alignment.TopCenter,
             modifier = Modifier.fillMaxWidth()){
@@ -121,7 +121,6 @@ fun Greeting(modifier: Modifier = Modifier) {
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
